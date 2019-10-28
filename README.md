@@ -10,3 +10,5 @@ Es recomendable iniciar los temas y ejercicios en orden.
 ### Clonar este repo.
 `git clone https://github.com/ArturVargas/Intro-a-Python3.git`
 
+## Best Practices.
+https://gist.github.com/sloria/7001839
