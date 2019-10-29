@@ -16,11 +16,12 @@ Django es un framework de desarrollo web que permite desarrollar aplicaciones co
   -- `django-admin startproject _Nombre_de_tu_Proyecto` es este caso el nombre de mi proyecto es "API".
 
 La estructura que tendremos es la siguiente:
-  REST_PY
-    |_____API
-    |       |_____API
-    |       |_____mage.py
-    |  
-    |_____restEnv
+* REST_PY
+  *  |_____API
+  *  |       |_____API
+  *  |       |_____mage.py
+  *  |  
+  *  |_____restEnv
+
 * Ahora para levantar nustro proyecto nos colocamos a nivel de la carpeta API REST_PY/API y ejecutamos `./manage.py runserver`
   -- esto nos permite correr nuestro servidor local de django
