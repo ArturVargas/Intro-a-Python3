@@ -25,3 +25,13 @@ La estructura que tendremos es la siguiente:
 
 * Ahora para levantar nustro proyecto nos colocamos a nivel de la carpeta API REST_PY/API y ejecutamos `./manage.py runserver`
   -- esto nos permite correr nuestro servidor local de django
+  **Por defecto corre en localhost:8000**
+
+* Ahora editaremos settings.py.
+  -- En ALLOWED_HOSTS agregamos un asterisco para que nos permita hacer peticiones desde cualquie parte:
+    ALLOWED_HOSTS = ['*']
+  -- En LANGUAJE_CODE podemos cambaiar el idioma de la pagina a español:
+    LANGUAGE_CODE = 'es'
+  __ Podemos cambiar la zona horaria tambien:
+    TIME_ZONE = 'America/Mexico_City'
+ 
