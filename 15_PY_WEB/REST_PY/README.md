@@ -35,3 +35,37 @@ La estructura que tendremos es la siguiente:
   __ Podemos cambiar la zona horaria tambien:
     TIME_ZONE = 'America/Mexico_City'
  
+* Como siguiente paso crearemos una app con django que se refiere a un modulo o submodulo de nuestro proyecto.
+[Ver más...](https://stackoverflow.com/questions/19350785/what-s-the-difference-between-a-project-and-an-app-in-django-world) `./manage.py startapp nombre_de_tu_app` en este caso usaré books como nombre de mi app.
+**Haré un ejemplo de una libreria**
+
+`` Ahora tenemos dentro de REST_PY/API las carpetas API y books ``
+* Dentro de la Carpeta "books" tenemos más archivos de python que usaremos más adelante, por el momento nos interesa el archivo `models.py` que nos ayudara a crear una tabla para nuestra base de datos.
+
+* Crearemos un modelo de lo que sera nuestra tabla, para crear los modelos en python usamos clases.
+
+* Despues de tener nuestro modelo, agregamos nuestra app a settings.py que se encuentra en: REST_PY/API/API/settings.py en el arreglo de INSTALLED_APPS
+
+* Una vez agregada nuestra app en mi caso es "books" hacemos las migraciones desde la terminal con: `./manage.py makemigrations`
+  * -- nos regresa un mensaje de Create model Libro donde Libro es el nombre de nuestra clase de models.
+  * Los errores más comunes en este punto son por el tipo de datos, asegurate de tenerlos bien escritos.
+
+* Para que el cambio se vea reflejado en la bd tenemos que ejecutar el comando `./manage.py migrate` esto hace que el modelo que acabamos de hacer se convierta en una tabla. 
+
+* Dentro de la carpeta de nuestra app "books" encontraremos un archivo admin.py el cual nos permite registrar nuestros modelos
+y manejarlos desde el administrador por defecto de django
+
+* Regresamos a nuestra terminal y ejecutamos `./manage.py createsuperuser` 
+    * Nos pedira un nombre de usuario, un correo que podemos omitir, un password y confirmar el password
+    * Para ver como funciona el admin de django volvemos a levantar nuestro server local `./mange.py runserver`
+    * Visitamos la direccion **localhost:8000/admin** donde nos pedira los datos del super usuario que acabamos de crear.
+
+* En el panel de administracion se muestra nuestro modelo Libros
+al hacer click en el nos muestra un boton donde podemos empezar a cargar datos a nuestra BD      
+
+* Instalaremos 2 librerias más que nos permitiran hacer una API
+    * la primera es [Django Rest Framework](https://www.django-rest-framework.org/) `pip install djangorestframework`
+    * la otra es [Django Cors Headers](https://pypi.org/project/django-cors-headers/) `pip install django-cors-headers`
+
+* Una vez instaladas iremos al archivo settings.py y añadiremos estas librerias en el arreglo de Installed Apps.
+
