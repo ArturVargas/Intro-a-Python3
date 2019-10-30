@@ -69,3 +69,19 @@ al hacer click en el nos muestra un boton donde podemos empezar a cargar datos a
 
 * Una vez instaladas iremos al archivo settings.py y añadiremos estas librerias en el arreglo de Installed Apps.
 
+* Para poder usar python como una API necesitamos serializar nuestros modelos en un formato JSON para que sea compatible con diferentes frameworks de frontend.
+  * Creamos un archivo serializers.py dentro de la app books
+  en este archivo lo que haremos es decirle que campos queremos serializar en nustro caso seran todos.
+
+* Despues en el archivo views.py crearemos un [ViewSet](https://www.django-rest-framework.org/api-guide/viewsets/#viewsets), un VIewSet es una interfaz que tiene Rest Framework y nos permite trabajar con los diferentes metodos, para trabajar con los registros que estamos serializando
+
+* Una vez creado nuestro ViewSet iremos al archivo urls.py que esta en nuestra carpeta API. aqui crearemos la ruta correspondiente
+
+* Por ultimo corremos nuevamente nuestro servidor y visitamos la ruta que acabamos de crear `localhost:8000/books/` si todo sale bien, veremos una pantalla con el registro que insertamos anteriormente desde el admin pero en formato json.
+
+* Podemos probar nuestra API haciendo una peticion desde Postman de tipo POST a la url `localhost:8000/books/`
+
+### Happy Hacking :D!
+
+
+
