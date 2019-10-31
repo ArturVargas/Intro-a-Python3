@@ -1,0 +1,29 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="container mx-auto my-3">
+    <h1 class="text-center my-4">Products</h1>
+      <div class="row">
+       {% for prod in products %}
+        <div class="col my-3">
+          <div class="card" style="width: 18rem;">
+            <img src="{{prod.img_url}}" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title text-center">{{prod.product_name}}</h5>
+                <p class="card-text text-center">${{prod.price}} pz</p>
+                <a href="#" class="btn btn-success btn-block">Add to Cart</a>
+              </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+
+      <!-- <ul>
+        {% for prod in products %}
+          <li>{{ prod.product_name }} (${{prod.price}} )</li>
+        {% endfor %}
+      </ul> -->
+  </div>
+  
+{% endblock %}
